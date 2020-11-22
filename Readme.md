@@ -9,9 +9,19 @@ npm i -D html-webpack-plugin // плагин для генерации html и �
 
 npm i -D clean-webpack-plugin // плагин для очистки папки с продакшеном
 
+npm install --save-dev babel-loader @babel/core // babel
+npm install --save-dev @babel/preset-env // crossbrowser
+npm install --save @babel/polyfill // async await and others pilyfills
+npm install --save @babel/plugin-proposal-class-properties // oop js static variables and other
+npm install --save-dev @babel/preset-typescript // typescript
+npm install --save-dev @babel/preset-react // react
+
+npm install react react-dom // react
+
 npm i -D style-loader css-loader // лоадеры для подключения css
 
 npm i -D sass sass-loader // лоадер scss sass
+npm i -D less less-loader // лоадер less
 
 npm i -D file-loader // лоадер для подключения файлов
 

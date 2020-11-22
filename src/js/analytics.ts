@@ -1,18 +1,14 @@
 import * as $ from 'jquery';
-function analytics (){
+function analytics (): object{
 	let counter = 0;
-	let destroyed = false;
+	let destroyed: boolean = false;
 
-	const increaseCounter = () => {
-		counter++;  
-	}
-		
+	const increaseCounter = (): number => counter++;
+	counter = 0;
+	destroyed = false;
+	document.addEventListener('click', increaseCounter);
+
 	return {
-		create(){
-			counter = 0;
-			destroyed = false;
-			document.addEventListener('click', increaseCounter);
-		},
 		getCounter(){
 			if(destroyed){
 				return 'Analytics it destroyed';
@@ -28,4 +24,4 @@ function analytics (){
 		}		
 	}
 }
-window.analytics = analytics();
+window['analytics'] = analytics();

@@ -16,23 +16,22 @@ body {
 .logo {
 	background-image: url('../assets/images/webpack-logo.png');
 	background-size: cover;
-	width: 100px;
-	height: 100px;
+	width: 200px;
+	height: 200px;
 	margin: auto;
 }
 
-$border: 1px solid red;
+$color:  red;
 
 .scss-box{
-	width: 100px;
-
-	border: $border;
-	color: white;
+	max-width: 50%;
+	padding: 20px;
+	background-color: $color;
 	text-align: center;
-	font-size: 1rem;	
 	margin: 0px auto;
 	.inside{
 		width: 100%;
-		background-color: green;
+		color: white;
+		font-size: 1rem;	
 	}
 }
