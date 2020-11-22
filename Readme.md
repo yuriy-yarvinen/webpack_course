@@ -1,8 +1,9 @@
 # Webpack course
 
-Код из курса по webpak 
+Код из курса по webpack 
 
 -D для разработки тоже что и --save-dev
+
 -S зависимость в проекте
 
 ## Comands
