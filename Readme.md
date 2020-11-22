@@ -1,9 +1,14 @@
-Comands
-npm init // инициализация проекта
-npm install -D webpack webpack-cli // установка вебпак и вебпак кли
+# Webpack course
+
+Код из курса по webpak 
 
 -D для разработки тоже что и --save-dev
 -S зависимость в проекте
+
+## Comands
+```
+npm init // инициализация проекта
+npm install -D webpack webpack-cli // установка вебпак и вебпак кли
 
 npm i -D html-webpack-plugin // плагин для генерации html и автоматического подключения в него скриптов
 
@@ -48,13 +53,22 @@ npm i -D optimize-css-assets-webpack-plugin // оптимизация css
 npm i -S jquery // установка jquery
 
 npm i normalize.css библиотека для адаптации css
+```
 
-//// 
-package.json
-"scripts": {
-  "dev": "webpack --mode development",
-  "watch": "webpack --mode development --watch",
-  "prod": "webpack --mode production"
-},
 
+## package.json
+```
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
+    "prod": "cross-env NODE_ENV=production webpack --mode production",
+    "analyzer": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json"
+  },
+```
+
+## полезные ссылки
+
+[Webpack](https://webpack.js.org/)
+[Babel](https://babeljs.io/)
+[Eslint](https://eslint.org/)
 
