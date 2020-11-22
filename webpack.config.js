@@ -73,7 +73,7 @@ module.exports = {
     // if context not set
     // main: path.resolve(__dirname, './js/index.js'),
     // analytics: path.resolve(__dirname, './js/analytics.js'),
-    main: ['@babel/polyfill', './js/index.js'],
+    main: ['@babel/polyfill', './js/index.jsx'],
     analytics: './js/analytics.ts',
   },
   // watch: true,
@@ -91,7 +91,7 @@ module.exports = {
   },
   // выносит скрипты которые были подключены в разные точки входа, на примере jquery
   optimization: optimization(),
-
+  devtool: isDev ? 'source-map' : '',
   module: {
     rules: [
       {
