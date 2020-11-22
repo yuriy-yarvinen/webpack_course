@@ -67,7 +67,7 @@ npm i normalize.css библиотека для адаптации css
   },
 ```
 
-## полезные ссылки
+## Полезные ссылки
 
 [Webpack](https://webpack.js.org/)
 [Babel](https://babeljs.io/)
