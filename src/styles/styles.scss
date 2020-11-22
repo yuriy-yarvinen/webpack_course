@@ -1,0 +1,38 @@
+@import "./roboto.css";
+@import "~normalize.css";
+
+body {
+	font-family: 'Roboto';
+}
+
+.row{
+	width: 100%;
+}
+
+.title{
+	text-align: center;
+}
+
+.logo {
+	background-image: url('../assets/images/webpack-logo.png');
+	background-size: cover;
+	width: 100px;
+	height: 100px;
+	margin: auto;
+}
+
+$border: 1px solid red;
+
+.scss-box{
+	width: 100px;
+
+	border: $border;
+	color: white;
+	text-align: center;
+	font-size: 1rem;	
+	margin: 0px auto;
+	.inside{
+		width: 100%;
+		background-color: green;
+	}
+}
