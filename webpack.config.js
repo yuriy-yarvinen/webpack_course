@@ -50,7 +50,7 @@ const cssLoaders = extra => {
 
 const babelOptions = preset => {
 
-  let babelOptions = {
+  const babelOptions = {
     presets: [
       '@babel/preset-env',
     ],
@@ -65,6 +65,46 @@ const babelOptions = preset => {
 
   return babelOptions;
 };
+
+const jsLoader = () => {
+  const loaders = 
+  [
+    {
+      loader: 'babel-loader',
+      options: babelOptions()
+    }
+  ]
+
+  if(isDev){
+    loaders.push('eslint-loader');
+  }
+
+  return loaders;
+}
+
+const plugins = () => {
+  const base = [
+    new HtmlWebpackPlugin({
+      // template: './src/index.html',
+      template: './index.html',
+      minify: {
+        collapseWhitespace: isProd
+      }
+    }),
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [{
+        from: path.resolve(__dirname, 'src/assets/images/favicon.ico'),
+        to: path.resolve(__dirname, 'dist/images')
+      }]
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'css/' + filename('css')
+    })
+  ];
+
+  return base;
+}
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -91,7 +131,7 @@ module.exports = {
   },
   // выносит скрипты которые были подключены в разные точки входа, на примере jquery
   optimization: optimization(),
-  devtool: isDev ? 'source-map' : '',
+  devtool: isDev ? 'source-map' : false,
   module: {
     rules: [
       {
@@ -111,10 +151,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: babelOptions()
-        }
+        use: jsLoader()
       },
       {
         test: /\.ts$/,
@@ -150,23 +187,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      // template: './src/index.html',
-      template: './index.html',
-      minify: {
-        collapseWhitespace: isProd
-      }
-    }),
-    new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
-      patterns: [{
-        from: path.resolve(__dirname, 'src/assets/images/favicon.ico'),
-        to: path.resolve(__dirname, 'dist/images')
-      }]
-    }),
-    new MiniCssExtractPlugin({
-      filename: 'css/' + filename('css')
-    })
-  ]
+  plugins: plugins()
 };

@@ -9,4 +9,6 @@ class Util {
 	static id = Date.now()
 }
 
+const testConts = 12;
+
 console.log('Util Id:', Util.id);

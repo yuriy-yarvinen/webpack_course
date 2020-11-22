@@ -18,6 +18,10 @@ npm install --save-dev @babel/preset-react // react
 
 npm install react react-dom // react
 
+npm install -D eslint eslint-loader babel-eslint
+
+npm install --save-dev webpack-bundle-analyzer
+
 npm i -D style-loader css-loader // лоадеры для подключения css
 
 npm i -D sass sass-loader // лоадер scss sass
