@@ -89,7 +89,8 @@ const plugins = () => {
       template: './index.html',
       minify: {
         collapseWhitespace: isProd
-      }
+      },
+      cache: false
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({

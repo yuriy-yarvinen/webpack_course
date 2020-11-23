@@ -54,6 +54,11 @@ npm i -D optimize-css-assets-webpack-plugin // оптимизация css
 npm i -S jquery // установка jquery
 
 npm i normalize.css библиотека для адаптации css
+
+
+npm install --save-dev webpack webpack-cli html-webpack-plugin clean-webpack-plugin copy-webpack-plugin babel-loader @babel/core @babel/preset-env @babel/polyfill eslint eslint-loader babel-eslint css-loader optimize-css-assets-webpack-plugin mini-css-extract-plugin cross-env terser-webpack-plugin
+
+
 ```
 
 
