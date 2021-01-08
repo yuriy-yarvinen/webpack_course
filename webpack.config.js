@@ -14,16 +14,16 @@ const optimization = () => {
     splitChunks: {
       chunks: 'all'
     }
-  }
+  };
   if (isProd) {
-    config.minimize = true,
+    config.minimize = true;
       config.minimizer = [
         new OptimizeCssAssetPlugin(),
         new TerserWebpackPlugin()
-      ]
+      ];
   }
   return config;
-}
+};
 
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
 
@@ -73,14 +73,14 @@ const jsLoader = () => {
       loader: 'babel-loader',
       options: babelOptions()
     }
-  ]
+  ];
 
   if(isDev){
     loaders.push('eslint-loader');
   }
 
   return loaders;
-}
+};
 
 const plugins = () => {
   const base = [
@@ -105,7 +105,7 @@ const plugins = () => {
   ];
 
   return base;
-}
+};
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
