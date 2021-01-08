@@ -27,6 +27,7 @@ const optimization = () => {
 
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
 
+
 const cssLoaders = extra => {
 
   let cssLoadersArray = [
@@ -40,8 +41,20 @@ const cssLoaders = extra => {
       loader: 'css-loader',
     }
   ];
-
   if (extra) {
+
+    cssLoadersArray.push({
+      loader: "postcss-loader",
+      options: {
+        postcssOptions: {
+          plugins: [
+            [
+              "postcss-preset-env",
+            ],
+          ],
+        },
+      }
+    });
     cssLoadersArray.push({ loader: extra });
   }
 
@@ -116,6 +129,7 @@ module.exports = {
     // analytics: path.resolve(__dirname, './js/analytics.js'),
     main: ['@babel/polyfill', './js/index.jsx'],
     analytics: './js/analytics.ts',
+    // withoutImportCss: ['./js/main.js', './scss/style.scss']
   },
   // watch: true,
   output: {

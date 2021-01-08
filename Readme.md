@@ -22,6 +22,10 @@ npm install --save @babel/plugin-proposal-class-properties // oop js static vari
 npm install --save-dev @babel/preset-typescript // typescript
 npm install --save-dev @babel/preset-react // react
 
+npm install --save-dev postcss-loader postcss // to add prefix 
+npm install --save-dev postcss-preset-env // to add prefix 
+
+
 npm install react react-dom // react
 
 npm install -D eslint eslint-loader babel-eslint
